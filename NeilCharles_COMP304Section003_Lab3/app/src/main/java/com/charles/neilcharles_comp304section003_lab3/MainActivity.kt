@@ -16,19 +16,19 @@ import com.charles.neilcharles_comp304section003_lab3.ui.theme.NeilCharles_COMP3
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContent {
             NeilCharles_COMP304Section003_Lab3Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                ///Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                        //modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
     }
-}
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
