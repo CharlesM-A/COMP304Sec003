@@ -5,13 +5,14 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "product_table")
 data class Product(
 
-    @PrimaryKey val prodID: Int, //From (101-999)
+    @PrimaryKey(autoGenerate = true) val prodID: Int = 100, //From (101-999)
     val prodName: String,
     val prodPrice: Double, //Must be positive
     val dateOfDelivery: String, //Will think of something
-    val prodCategory: String, //Dropdown maybe?
+    val prodCategory: String, //will be a dropdown
     val prodFavourites: Boolean = false, //Default value will be false.
 
     )
+
 
 
