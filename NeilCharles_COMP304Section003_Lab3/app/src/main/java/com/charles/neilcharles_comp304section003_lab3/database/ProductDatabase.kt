@@ -11,4 +11,7 @@ import android.content.Context
 )
 abstract class ProductDatabase: RoomDatabase() {
     abstract val dao: ProductDao
+
+    //didn't add a singleton pattern - probably should
+
 }
