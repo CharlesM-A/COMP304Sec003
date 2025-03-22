@@ -16,10 +16,10 @@ interface ProductDao {
     //Displays all products and sorts by name in alphabetic order
     //Flow will notify the user if any changes occur in the table
     @Query("SELECT * FROM product_table ORDER BY prodName ASC")
-    suspend fun getAllProducts(): Flow<List<Product>>
+    fun getAllProducts(): Flow<List<Product>>
 
     //Displays ONLY products that are favourited
     @Query("SELECT * FROM product_table WHERE prodFavourites = 1")
-    suspend fun getFavProduct(): Flow<List<Product>>
+    fun getFavProduct(): Flow<List<Product>>
 
 }
