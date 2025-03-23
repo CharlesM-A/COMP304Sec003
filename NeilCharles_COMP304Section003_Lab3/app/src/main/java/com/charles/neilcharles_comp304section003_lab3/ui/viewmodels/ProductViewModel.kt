@@ -11,6 +11,7 @@ class ProductViewModel(private val repository: ProductRepository) :ViewModel() {
     val favProducts = repository.favouriteProducts
 
     fun upsertProduct(product: Product){
+        //viewModelScope runs asynchronously so calling queries to the database won't freeze the UI
         viewModelScope.launch {
             repository.upsert(product)
         }
