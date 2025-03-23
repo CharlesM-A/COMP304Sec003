@@ -14,7 +14,7 @@ interface ProductDao {
     suspend fun deleteProduct(product: Product)
 
     //Displays all products and sorts by name in alphabetic order
-    //Flow will notify the user if any changes occur in the table
+    //Flow allows the UI to update automatically and notify if changes in table occur
     @Query("SELECT * FROM product_table ORDER BY prodName ASC")
     fun getAllProducts(): Flow<List<Product>>
 
