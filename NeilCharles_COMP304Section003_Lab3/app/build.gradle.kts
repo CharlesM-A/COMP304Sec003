@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp")
+
+
 }
 
 android {
@@ -43,14 +46,14 @@ dependencies {
 
     //room
     implementation(libs.androidx.room.runtime)
-    //optional Kotlin Extensions and Coroutines
     implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.common)
+    ksp(libs.androidx.room.compiler) //this thing has ruined me
 
     implementation(libs.ui)
     implementation(libs.material3)
     implementation(libs.androidx.foundation)
     implementation(libs.androidx.core.ktx)
+    //optional Kotlin Extensions and Coroutines
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -67,4 +70,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    configurations.all {
+        resolutionStrategy {
+            force("org.jetbrains:annotations:23.0.0")
+        }
+    }
 }
