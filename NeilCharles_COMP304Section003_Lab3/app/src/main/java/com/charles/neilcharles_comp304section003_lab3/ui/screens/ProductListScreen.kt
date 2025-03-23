@@ -39,7 +39,9 @@ fun ProductListScreen(repository: ProductRepository,navController: NavHostContro
                 ProductItem(product)
             }
         }
+
     }
+
 }
 
 @Composable
