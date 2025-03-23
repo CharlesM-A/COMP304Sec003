@@ -14,9 +14,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.charles.neilcharles_comp304section003_lab3.models.Product
 import com.charles.neilcharles_comp304section003_lab3.repository.ProductRepository
 import androidx.compose.runtime.collectAsState
+import androidx.navigation.NavHostController
 
 @Composable
-fun ProductListScreen(repository: ProductRepository){
+fun ProductListScreen(repository: ProductRepository,navController: NavHostController){
     val productViewModel: ProductViewModel = viewModel(
         factory = object: ViewModelProvider.Factory {
             override fun <T: ViewModel>create(modelClass: Class<T>): T {

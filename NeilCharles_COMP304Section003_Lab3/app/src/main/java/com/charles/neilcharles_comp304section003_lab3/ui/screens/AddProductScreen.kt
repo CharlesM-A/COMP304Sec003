@@ -10,10 +10,23 @@ import com.charles.neilcharles_comp304section003_lab3.ui.viewmodels.ProductViewM
 
 @Composable
 fun AddProductScreen(productViewModel: ProductViewModel, onProductAdded: () -> Unit) {
+    var id by remember { mutableStateOf("") }
     var name by remember { mutableStateOf("") }
     var price by remember { mutableStateOf("") }
+    var date by remember { mutableStateOf("") }
     var category by remember { mutableStateOf("") }
     var isFavorite by remember { mutableStateOf(false) }
 
-
+    Column(modifier = Modifier.padding(16.dp)) {
+        //OutlinedTextField(value = id, onValueChange = { id = it }, label = { Text("ID") })
+        OutlinedTextField(value = name, onValueChange = { name = it }, label = { Text("Name") })
+        OutlinedTextField(value = price, onValueChange = { price = it }, label = { Text("Price") })
+        //OutlinedTextField(value = date, onValueChange = { date = it }, label = { Text("Date") })
+        OutlinedTextField(
+            value = category,
+            onValueChange = { category = it },
+            label = { Text("Category") })
+    }
 }
+
+
