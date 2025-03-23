@@ -10,6 +10,7 @@ import android.content.Context
     entities = [Product::class],
     version = 1
 )
+
 abstract class ProductDatabase: RoomDatabase() {
     abstract fun productDao(): ProductDao
 

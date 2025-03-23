@@ -11,6 +11,7 @@ import com.charles.neilcharles_comp304section003_lab3.ui.screens.ProductListScre
 import com.charles.neilcharles_comp304section003_lab3.repository.ProductRepository
 import com.charles.neilcharles_comp304section003_lab3.database.ProductDatabase
 import com.charles.neilcharles_comp304section003_lab3.ui.screens.AddProductScreen
+import com.charles.neilcharles_comp304section003_lab3.ui.viewmodels.ProductViewModel
 
 
 class MainActivity : ComponentActivity() {
@@ -49,7 +50,9 @@ fun ProductNav(repository: ProductRepository) {
             // Passing navController to the Tasks screen
             composable("store") {
                 AddProductScreen(
-                    productViewModel = productViewModel,
+                    productViewModel = ProductViewModel(
+                        repository = TODO()
+                    ),
                     onProductAdded = { navController.popBackStack() },
                     navController = navController)
 
