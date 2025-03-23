@@ -20,11 +20,14 @@ fun ProductListScreen(repository: ProductRepository){
     val productViewModel: ProductViewModel = viewModel(
         factory = object: ViewModelProvider.Factory {
             override fun <T: ViewModel>create(modelClass: Class<T>): T {
+                @Suppress("UNCHECKED_CAST")
                 return ProductViewModel(repository) as T
             }
         }
     )
 
+    //collectAsState() converts the Flow from the ViewModel to a state that the Compose can observe yippee
+    //wouldn't needed to do this I wasn't being extra and added the Flow stuff but hey
     val products = productViewModel.allProducts.collectAsState(initial = emptyList()).value
 
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {

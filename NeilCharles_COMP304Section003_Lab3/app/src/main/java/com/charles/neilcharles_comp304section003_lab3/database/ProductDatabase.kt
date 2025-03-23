@@ -13,6 +13,7 @@ import android.content.Context
 abstract class ProductDatabase: RoomDatabase() {
     abstract fun productDao(): ProductDao
 
+    //Singleton pattern that prevents the multiple instance from occurring when something something -its good to have
     companion object{
         @Volatile
         private var INSTANCE: ProductDatabase? = null
