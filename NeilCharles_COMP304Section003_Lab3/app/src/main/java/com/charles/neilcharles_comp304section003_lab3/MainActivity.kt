@@ -16,6 +16,7 @@ import com.charles.neilcharles_comp304section003_lab3.ui.screens.ProductListScre
 import com.charles.neilcharles_comp304section003_lab3.ui.theme.NeilCharles_COMP304Section003_Lab3Theme
 import com.charles.neilcharles_comp304section003_lab3.ui.viewmodels.ProductViewModel
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,7 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
 
             NeilCharles_COMP304Section003_Lab3Theme {
+
                 NavHost(navController, startDestination = "product_list") {
                     composable("product_list") {
                         ProductListScreen(productViewModel, navController)

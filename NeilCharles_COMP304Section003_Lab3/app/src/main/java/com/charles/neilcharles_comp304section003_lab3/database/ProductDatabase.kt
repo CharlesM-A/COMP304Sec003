@@ -10,6 +10,7 @@ import com.charles.neilcharles_comp304section003_lab3.models.Product
     version = 1,
     exportSchema = false
 )
+
 abstract class ProductDatabase: RoomDatabase() {
     abstract fun productDao(): ProductDao
 
