@@ -49,6 +49,9 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler) //this thing has ruined me
 
+    //navigation
+    implementation(libs.androidx.navigation.compose)
+
     implementation(libs.ui)
     implementation(libs.material3)
     implementation(libs.androidx.foundation)
@@ -69,6 +72,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
 
     configurations.all {
         resolutionStrategy {

@@ -1,14 +1,14 @@
 package com.charles.neilcharles_comp304section003_lab3.database
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.charles.neilcharles_comp304section003_lab3.models.Product
-import com.charles.neilcharles_comp304section003_lab3.database.ProductDao
-import android.content.Context
 
 @Database(
     entities = [Product::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class ProductDatabase: RoomDatabase() {
     abstract fun productDao(): ProductDao
