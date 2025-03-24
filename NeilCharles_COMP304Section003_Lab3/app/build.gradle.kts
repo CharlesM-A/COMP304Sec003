@@ -47,7 +47,7 @@ dependencies {
     //room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.navigation.runtime.ktx)
+    //implementation(libs.androidx.navigation.runtime.ktx)
     ksp(libs.androidx.room.compiler) //this thing has ruined me
 
     //navigation
