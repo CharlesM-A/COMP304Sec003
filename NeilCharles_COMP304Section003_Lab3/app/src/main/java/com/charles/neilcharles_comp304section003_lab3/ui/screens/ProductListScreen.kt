@@ -1,4 +1,5 @@
 package com.charles.neilcharles_comp304section003_lab3.ui.screens
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,6 +28,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.charles.neilcharles_comp304section003_lab3.models.Product
@@ -51,10 +53,12 @@ fun ProductListScreen(productViewModel: ProductViewModel, navController: NavCont
     ) { paddingValues ->
         Column(modifier = Modifier
             .fillMaxSize()
+            .background(Color(0xFF2B2B2B))
             .padding(paddingValues)) {
             Text(
                 text = "Product List",
                 style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
             )
 
